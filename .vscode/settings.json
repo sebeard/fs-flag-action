@@ -1,0 +1,21 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  "editor.formatOnSave": true,
+  "cucumber.glue": [
+    "src/test/**/*.java",
+    "features/**/*.ts",
+    "features/**/*.tsx",
+    "features/**/*.php",
+    "features/**/*.py",
+    "tests/**/*.py",
+    "tests/**/*.rs",
+    "features/**/*.rs",
+    "features/**/*.rb",
+    "*specs*/**/.cs",
+    "test/**/steps/*.js"
+  ],
+  "jest.jestCommandLine": "npm run test --"
+}

@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "globals": {
+    "awsContext": true,
+    "awsLambdaEvent": true,
+    "collaborationBuilder": true,
+    "demoBuilder": true,
+    "guestBuilder": true,
+    "appBuilder": true,
+    "appInstanceBuilder": true,
+    "resourceBuilder": true,
+    "resourceInstanceBuilder": true,
+    "idpBuilder": true
+  },
+  "extends": "airbnb",
+  "overrides": [
+    {
+      "files": ["**/*.spec.js", "**/.jest/*"],
+      "env": {
+        "jest": true,
+        "jest/globals": true
+      },
+      "plugins": ["jest"]
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "ignorePatterns": ["!.*", "dist", "node_modules"],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.spec.js", "**/.jest/*"]
+      }
+    ]
+  },
+  "settings": {
+    "jest": {
+      "globalAliases": {
+        "awsContext": ["awsContext"],
+        "awsLambdaEvent": ["awsLambdaEvent"],
+        "collaborationBuilder": ["collaborationBuilder"],
+        "demoBuilder": ["demoBuilder"],
+        "appBuilder": ["appBuilder"],
+        "appInstanceBuilder": ["appInstanceBuilder"],
+        "resourceBuilder": ["resourceBuilder"],
+        "resourceInstanceBuilder": ["resourceInstanceBuilder"]
+      }
+    }
+  }
+}

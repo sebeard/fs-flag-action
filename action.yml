@@ -1,0 +1,34 @@
+name: "Flagsmith - Create/Update Feature Flag"
+author: "Stuart Beard"
+branding:
+  icon: "flag"
+  color: "blue"
+description: "Provides the ability to create or update a feature flag and value in Flagsmith"
+inputs:
+  flagsmithEnvKey:
+    description: "Which Environment under the Project Flagsmith should update the value of the feature flag"
+    required: true
+  flagsmithProjectId:
+    required: true
+    description: "The Flagsmith Project ID - used for initial definition of features"
+  flagsmithApiToken:
+    required: true
+    description: "The Flagsmith Service API Token"
+  flagsmithApiUrl:
+    description: "API base url for the Flagsmith Service if being hosted elsewhere"
+    default: "https://api.flagsmith.com/api/v1"
+  scanPath:
+    description: "Specifies the directory to recursively search for feature flag files"
+    default: "."
+  fileName:
+    description: "Specifies the file(s) to search for that contain the flag value"
+    default: "flagValue.json"
+  flagNamePrefix:
+    description: "Adds this value as a prefix to a feature flag name"
+    default: ""
+  flagNameSuffix:
+    description: "Adds this value as a suffix to a feature flag name"
+    default: ""
+runs:
+  using: "node16"
+  main: "dist/index.js"
